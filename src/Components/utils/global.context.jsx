@@ -1,15 +1,33 @@
-import { createContext } from "react";
+import { createContext, useContext, useReducer } from "react";
 
-export const initialState = {theme: "", data: []}
+export const initialState = {theme: "light", data: [], favs: []}
 
 export const ContextGlobal = createContext(undefined);
 
+const reducer = (state, action) => {
+  switch(action.type) {
+    case "dark":
+      return {...state, theme: "dark"}
+    case "light": 
+      return 
+    default:
+      return state
+  }
+}
+
 export const ContextProvider = ({ children }) => {
-  //Aqui deberan implementar la logica propia del Context, utilizando el hook useMemo
+  
+  const url = "https://jsonplaceholder.typicode.com/users"
+  const [state, dispatch] = useReducer(reducer, initialState)
 
   return (
-    <ContextGlobal.Provider value={{}}>
+    <ContextGlobal.Provider value={{state, dispatch}}>
       {children}
     </ContextGlobal.Provider>
   );
+
 };
+
+export const useContextGlobal = () => {
+  return useContext(ContextGlobal);
+}
