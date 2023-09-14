@@ -12,7 +12,6 @@ const Favs = () => {
     <section>
     <div>
       <h2>Favs Dentists</h2>
-      {/* si hay dentistas que aparezca el botón 'remove all' */}
       {favs.length > 0 && <button onClick={() => {dispatch({type: "removeAllFavs"})}}>Remove all</button>}
     </div>
     <div className="card-grid">

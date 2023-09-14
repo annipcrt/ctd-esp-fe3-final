@@ -2,18 +2,9 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { useContextGlobal } from './utils/global.context'
 
-//Este componente debera ser estilado como "dark" o "light" dependiendo del theme del Context
-
 const Navbar = () => {
   
   const {state, dispatch} = useContextGlobal()
-  
-  // const changeTheme = () =>{
-  //   !localStorage.getItem('theme') && localStorage.setItem('theme', state.theme)
-  //   localStorage.getItem('theme') === 'light'
-  //     ? dispatch({type: localStorage.getItem('theme'), payload: 'dark'})
-  //     : dispatch({type: localStorage.getItem('theme'), payload: 'light'})
-  // }
 
   const changeTheme = () => {
     const currentTheme = localStorage.getItem('theme');

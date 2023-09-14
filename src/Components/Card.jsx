@@ -7,7 +7,7 @@ const Card = ({ dentist }) => {
   const { name, username, id } = dentist
   const { state, dispatch } = useContextGlobal()
   const favs = state.favs
-  const isFav = favs.find(fav => fav.id === id) // método para para el botón
+  const isFav = favs.find(fav => fav.id === id)
   
   const addFav = ()=>{
     dispatch({type: "addFav", payload: dentist})
