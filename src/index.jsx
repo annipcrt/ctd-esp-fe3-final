@@ -1,18 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
+import './darktheme.css'
 import App from './App';
 import { BrowserRouter } from 'react-router-dom';
+import ContextProvider  from './Components/utils/global.context';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-// rutas y contexto
 root.render(
-  <React.StrictMode>
     <BrowserRouter>
-      <App/>
+      <ContextProvider>
+        <App/>
+      </ContextProvider>
     </BrowserRouter>
-  </React.StrictMode>
 );
 
 

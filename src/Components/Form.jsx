@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-
+import { useState } from "react";
 
 const Form = () => {
   
@@ -8,13 +7,14 @@ const Form = () => {
     email: ""
   })
 
-  const [confirm, setConfirm] = useState()
-  const [error, setError] = useState()
+  const [confirm, setConfirm] = useState(false)
+  const [error, setError] = useState(false)
 
   const onSubmitHandler = (e) => {
     e.preventDefault();
     const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
-    if (user.name.length <= 3 && emailRegex.test(user.email)) {
+    
+    if (user.name.length < 5 || !emailRegex.test(user.email)) {
       setError(true)
       setConfirm(false)
     } else {
@@ -26,12 +26,12 @@ const Form = () => {
   return (
     <div>
       <form onSubmit={onSubmitHandler}>
-        <input type="text" onChange={(e) => {setUser({ ...user, name: e.target.value });}} placeholder="Full name"/>
-        <input type="email" onChange={(e) => {setUser({ ...user, email: e.target.value });}} placeholder="Email" />
+        <input type="text" onChange={(e) => {setUser({ ...user, name: e.target.value });}} id="username" placeholder="Full name"/>
+        <input type="email" onChange={(e) => {setUser({ ...user, email: e.target.value });}} id="useremail" placeholder="Email" />
         <button type="submit">Send</button>
       </form>
       {error && <p className="error">Please verify your information again.</p>}
-      {confirm && <p>Thank you, {user.name}! We'll contact you via email as soon as possible.</p>}
+      {confirm && <p className="confirm">Thank you, {user.name}! We'll contact you via email as soon as possible.</p>}
     </div>
   );
 };

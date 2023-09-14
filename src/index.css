@@ -1,5 +1,10 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
+  max-width: 100vw;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -11,11 +16,17 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.App {
+  min-height: 100vh;
+}
+
 .favButton{
   background-color: rgba(136, 136, 136, 0.116);
-  padding: 10px;
+  padding: 5px;
+  margin: 5px;
   border: none;
-  width: 100%;
+  width: 95%;
   cursor: pointer;
 }
 
@@ -24,10 +35,23 @@ h1{
 }
 
 nav{
+  background-color: #efbbff;
   display: flex;
-  width: 80vw;
-  justify-content: flex-start;
-  padding: 1rem;
+  justify-content: space-between;
+  padding: 0.5rem
+}
+
+h2 {
+  margin: 0;
+}
+
+.links {
+  gap: 10px;
+  align-items: center;
+}
+
+.btn-theme {
+  border: none;
 }
 
 a{
@@ -36,20 +60,24 @@ a{
   margin: 5px;
   cursor: pointer;
 }
+
 a:hover{
   color: rgb(136, 136, 136);
 } 
 
+main {
+  flex: 1;
+}
+
 footer {
+  background-color:	#efbbff;
   display: flex;
   justify-content: center;
   text-align: center;
-  padding: 2rem;
+  flex-direction: column;
   position: relative;
   bottom: 0;
-  width: 90%;
-  height: 40px;
-  margin-top: 2rem;
+  margin-top: 2rem auto;
 }
 
 footer > img{
@@ -58,8 +86,16 @@ footer > img{
 }
 footer > p{
   margin: 0;
-  padding-top: 0.7rem;
+  padding-top: 0.5rem;
 }
+
+.icons{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px; 
+  filter: brightness(0);
+} 
 
 form{
   display: flex;
@@ -81,7 +117,7 @@ form{
 }
 
 .card:hover{
-  border: 0.5px solid rgb(206, 217, 142);
+  border: 0.5px solid violet;
 }
 
 .card-grid{
@@ -92,31 +128,4 @@ form{
   height: auto;
   flex-wrap: wrap;
   margin: 0 auto;
-}
-
-table {
- border-collapse: collapse;
-    border-spacing: 0;
-    width: 100%;
-    display: table;
-    border: 1px solid #ccc;
-
-}
-
-td, th {
-  border: 1px solid #dddddd;
-  text-align: left;
-  padding: 8px;
-}
-
-tr:nth-child(even) {
-  background-color: #dddddd;
-}
-
-.dark{
-  background-color: #12121296;
-  color: white;
-}
-.dark > a {
-  color: white;
 }
