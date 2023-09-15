@@ -3,14 +3,6 @@
     color: white;
 }
 
-.dark nav {
-    background-color: #800080;
-}
-
-.dark .btn-theme {
-    background-color: white;
-}
-
 .dark a{
     color: white;
 }
@@ -18,6 +10,15 @@
 a:hover{
     color: rgb(136, 136, 136);
 }
+
+.dark nav {
+    background-color: #800080;
+}
+
+.dark .btn-theme {
+    background-color: #800080;
+}
+
 
 /* DETAILS */
 
@@ -48,6 +49,11 @@ a:hover{
 .dark .card {
     background-color: #525252;
     border: none;
+}
+
+.dark .card:hover{
+    border: 0.5px solid #800080;
+    transition: 0.3s;
 }
 
 .dark .removeAll-btn {
