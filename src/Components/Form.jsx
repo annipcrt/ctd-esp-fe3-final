@@ -12,7 +12,7 @@ const Form = () => {
 
   const onSubmitHandler = (e) => {
     e.preventDefault();
-    const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
+    const emailRegex = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/
     
     if (user.name.length < 5 || !emailRegex.test(user.email)) {
       setError(true)

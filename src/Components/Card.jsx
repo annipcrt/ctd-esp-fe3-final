@@ -19,7 +19,7 @@ const Card = ({ dentist }) => {
   return (
     <div className="card">
       <img src="/images/doctor.jpg" width={190} alt="" /> 
-      <Link to={"/dentist/" + id}> <h3>{name}</h3> </Link>
+      <Link to={"/dentist/" + id}> <h3 className="dentist-name">{name}</h3> </Link>
       <p>{username}</p>
     
       {!isFav 
