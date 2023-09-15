@@ -15,9 +15,9 @@ const Navbar = () => {
 
   return (
     <nav>
-        <div className="logo">
+        <div >
           <Link to='/'>
-            <h2>DH Odonto</h2>
+            <h2 className="logo">DH Odonto</h2>
           </Link>
         </div>
         <div className="links">

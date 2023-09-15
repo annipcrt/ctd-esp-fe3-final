@@ -10,14 +10,14 @@ const Favs = () => {
 
   return (
     <section>
-    <div>
-      <h2>Favs Dentists</h2>
-      {favs.length > 0 && <button onClick={() => {dispatch({type: "removeAllFavs"})}}>Remove all</button>}
+    <div className="favs">
+      <h2>Favorite Dentists</h2>
+      {favs.length > 0 && <button className="removeAll-btn" onClick={() => {dispatch({type: "removeAllFavs"})}}>Remove all</button>}
     </div>
     <div className="card-grid">
       {favs.length > 0
         ? favs.map(fav => <Card key={fav.id} dentist={fav}/>)
-        : <p>You haven't added any favorites yet</p>
+        : <p className="nofavs">You haven't added any favorites yet!</p>
       }
     </div>
   </section>

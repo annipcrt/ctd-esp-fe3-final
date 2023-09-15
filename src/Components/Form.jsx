@@ -26,8 +26,10 @@ const Form = () => {
   return (
     <div>
       <form onSubmit={onSubmitHandler}>
-        <input type="text" onChange={(e) => {setUser({ ...user, name: e.target.value });}} id="username" placeholder="Full name"/>
-        <input type="email" onChange={(e) => {setUser({ ...user, email: e.target.value });}} id="useremail" placeholder="Email" />
+        <label htmlFor="username">Full Name:</label>
+        <input type="text" onChange={(e) => {setUser({ ...user, name: e.target.value });}} id="username" placeholder="John Doe"/>
+        <label htmlFor="useremail">Email:</label>
+        <input type="email" onChange={(e) => {setUser({ ...user, email: e.target.value });}} id="useremail" placeholder="johndoe@email.com" />
         <button type="submit">Send</button>
       </form>
       {error && <p className="error">Please verify your information again.</p>}

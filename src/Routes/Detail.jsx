@@ -1,11 +1,12 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 
 
 const Detail = () => {
   const params = useParams()
   const [dentist, setDentist] = useState()
+  const navigate = useNavigate()
 
   
   useEffect(() => {
@@ -19,9 +20,9 @@ const Detail = () => {
     <section className='card-container'>
       <h2>Dentist Details N°{params.id}</h2>
       {dentist &&
-          <div>
+          <div className='card-info'>
             <img src="../images/doctor.jpg" width={200} alt="" />
-            <div>
+            <div className='card-info-description'>
               <h3>{dentist.name}</h3>
               <p><strong>Email:</strong> {dentist.email}</p>
               <p><strong>Phone:</strong> {dentist.phone}</p>
@@ -30,6 +31,9 @@ const Detail = () => {
             </div>
           </div>
       }
+      <div className='back-btn'>
+        <button onClick={() => {navigate(-1)}}>←</button>
+      </div>
     </section>
   )
 }
