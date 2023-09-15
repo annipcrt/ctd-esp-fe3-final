@@ -50,7 +50,7 @@ a:hover{
     border: none;
 }
 
-.removeAll-btn {
+.dark .removeAll-btn {
     background-color: #800080;
     color: white;
 }
