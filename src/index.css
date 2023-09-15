@@ -164,6 +164,7 @@ form > button {
 }
 
 .confirm {
+  text-align: center;
   position: relative;
   top: 30px;
   font-weight: bold;
